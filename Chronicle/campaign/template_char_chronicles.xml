@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+
+<!-- =================================================================================================================== -->	
+<!-- Abilities list object -->
+<!-- =================================================================================================================== -->
+	<template name="list_charabilities">
+		<windowlist>
+			<class>char_abilities</class>
+			<datasource>.listabilities</datasource> 
+			<columns width="222" />
+			<allowcreate />
+			<allowdelete />
+			<sortby><field>name</field></sortby>
+			<script file="campaign/scripts/char_abilitieslist.lua" />
+		</windowlist>
+	</template>
+
+
+<!-- =================================================================================================================== -->	
+<!-- Specialities list object -->
+<!-- =================================================================================================================== -->
+	<template name="list_charspecialities">
+		<windowlist>
+			<child></child>
+			<child><backcolor>1A40301E</backcolor></child>
+			<datasource>.listspecialities</datasource>
+			<class>char_specialities</class>
+			<allowcreate />
+			<allowdelete />
+			<noscroll />
+			<sortby><field>name</field></sortby>
+			
+			<script>
+				function onListChanged()
+					window.windowlist.onListChanged();
+				end
+				
+				function update(bEdit)
+					for _,w in ipairs(getWindows()) do
+						w.idelete.setVisibility(bEdit);
+					end
+				end
+				
+				function addEntry(bFocus)
+					local w = createWindow();
+					if bFocus then
+						w.name.setFocus();
+					end
+					return w;
+				end
+				
+				function onDrop(x, y, draginfo)
+					local sDragType = draginfo.getType();
+					if sDragType == "number" then
+						local w = addEntry(true);
+						if w then
+							w.name.setValue(draginfo.getDescription());
+							w.dicebonus.setValue(draginfo.getNumberData());
+						end
+					end;
+					return true;
+				end
+				
+			</script>
+			
+		</windowlist>
+	</template>
+
+</root>
