@@ -1,6 +1,6 @@
 # Fantasy Grounds Chronicle System Ruleset
 
-To install this ruleset, download the "Chronicle System.pak" file and copy it to the ruleset folder of Fantasy Grounds, located in your Fantasy Grounds data folder, e.g.
+To install this ruleset, download the "Chronicle.pak" file and copy it to the ruleset folder of Fantasy Grounds, located in your Fantasy Grounds data folder, e.g.
 ...\Fantasy Grounds Unity\Data\rulesets
 
 Version 0.1
