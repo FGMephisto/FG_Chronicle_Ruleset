@@ -64,11 +64,6 @@
 				<labelres>char_label_name</labelres>
 			</string_labeled>
 
-			<subwindow name="main">
-				<bounds>0,65,-1,-20</bounds>
-				<class>charsheet_main</class>
-			</subwindow>
-			
 			<subwindow name="skills">
 				<bounds>0,65,-1,-20</bounds>
 				<class>charsheet_skills</class>
@@ -85,10 +80,6 @@
 			</subwindow>
 
 			<tabs_charsheet name="tabs">
-				<tab>
-					<icon>tab_main</icon>
-					<subwindow>main</subwindow>
-				</tab>
 				<tab>
 					<icon>tab_abilities</icon>
 					<subwindow>skills</subwindow>

@@ -9,7 +9,6 @@
 		<windowlist>
 			<class>char_abilities</class>
 			<datasource>.listabilities</datasource> 
-			<columns width="222" />
 			<allowcreate />
 			<allowdelete />
 			<sortby><field>name</field></sortby>
