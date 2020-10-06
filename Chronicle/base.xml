@@ -6,11 +6,13 @@
 -->
 
 <root version="3.0" release="4" logo="logo.png">
-	<announcement text="Chronicle ruleset v0.1 for Fantasy Grounds" font="emotefont" icon="rulesetlogo_CoreRPG" />
+	<announcement text="Chronicle System ruleset v0.1 for Fantasy Grounds" font="emotefont" icon="rulesetlogo_CoreRPG" />
 
 	<!-- Attributes -->
 	<description>
-		<text>Chronicle</text>
+		<displayname>Chronicle System</displayname>
+		<displayversion>DEV</displayversion>
+		<text>Chronicle System</text>
 		<author>Green Ronin</author>
 		<website>https://www.fantasygrounds.com</website>
 	</description>
