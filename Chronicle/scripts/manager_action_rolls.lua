@@ -32,14 +32,38 @@ end
 
 
 -- ===================================================================================================================
--- This is the function that is called when the roll is initiated from a control
+-- This function is colled by controlls to build dice rolls
 -- ===================================================================================================================
 function controlRoll(nDiceTest, nDiceBonus, sAbility)
-	sRolledAbility = sAbility
-	local nDiceRolled = nDiceTest + nDiceBonus
-	local sParams = nDiceRolled .. "d6 " .. nDiceBonus
-	local rRoll = createRoll(sParams, sAbility);
-	ActionsManager.roll(nil, nil, rRoll);
+
+	-- ===================================================================================================================
+	-- Create roll for FG
+	-- ===================================================================================================================
+	if not UtilityManager.isClientFGU() then
+		sRolledAbility = sAbility
+		local nDiceRolled = nDiceTest + nDiceBonus
+		local sParams = nDiceRolled .. "d6 " .. nDiceBonus
+		local rRoll = createRoll(sParams, sAbility);
+		ActionsManager.roll(nil, nil, rRoll);
+	end
+	
+	-- ===================================================================================================================
+	-- Create roll for FGU
+	-- ===================================================================================================================
+	if UtilityManager.isClientFGU() then
+		sRolledAbility = "Rolling " .. "\"" .. sAbility .. "\"";
+		local nDiceRolled = nDiceTest + nDiceBonus;
+		local sParams = "1d6d1"
+	
+		if nDiceBonus == 0 then
+			sParams = nDiceRolled .. "d6";
+		else
+			sParams = nDiceRolled .. "d6d" .. nDiceBonus;
+		end
+	
+		local rRoll = { sType = "dice", sDesc = sRolledAbility, aDice = { expr = sParams }, nMod = 0 };
+		ActionsManager.performAction(nil, nil, rRoll);
+	end
 end
 
 
