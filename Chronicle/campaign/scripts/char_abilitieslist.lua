@@ -4,7 +4,7 @@
 
 function onInit()
 	local entrymap = {}
-					
+
 	for _,w in pairs(getWindows()) do
 		local sLabel = w.name.getValue()
 
@@ -17,7 +17,7 @@ function onInit()
 			end
 		end
 	end
-				
+
 -- Set properties and create missing entries for all known abilities defined in "data_common.lua"
 	for k, t in pairs(DataCommon.abilitiesdata) do
 		local matches = entrymap[k];
