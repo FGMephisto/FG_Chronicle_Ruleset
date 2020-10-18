@@ -75,6 +75,8 @@
 			end
 		</script>
 
+ 				<!-- ActionRolls.controlRoll(nDiceTest, nDiceBonus, sAbility); -->
+
 		<sheetdata>
 			<subwindow name="header">
 				<anchored position="insidetop">
